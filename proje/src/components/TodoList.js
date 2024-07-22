@@ -53,9 +53,9 @@ const TodoList = () => {
             <h1>To-Do List</h1>
             <input type="text" value={task} onChange={handleChange} />
             {isEditing ? (
-                <button onClick={handleUpdateTask}>Update </button>
+                <button className='update' onClick={handleUpdateTask}>Update </button>
             ) : (
-                <button onClick={handleAddTask}>Add </button>
+                <button className='add' onClick={handleAddTask}>Add </button>
             )}
             <ul>
                 {tasks.map((task, index) => (
@@ -64,7 +64,7 @@ const TodoList = () => {
                             {task.text}
                         </span>
                         <button onClick={() => handleEditTask(index)}>Edit</button>
-                        <button onClick={() => handleDeleteTask(index)}>Delete</button>
+                        <button className='delete' onClick={() => handleDeleteTask(index)}>Delete</button>
                     </li>
                 ))}
             </ul>
